@@ -37,7 +37,7 @@
 ![帳號不存在](https://user-images.githubusercontent.com/82807965/193403734-561d0c43-8311-4c8d-b460-cdfe008b7c88.jpg)
 ![密碼錯誤](https://user-images.githubusercontent.com/82807965/193403741-dd082c5f-343e-43ad-b45d-b430bab67cd5.jpg)
 
-* 登入後進入到部隊文書管理系統頁面，並顯示登入的帳號
+* 登入後進入到部隊文書管理系統頁面，會顯示登入的帳號
 ![登入後畫面](https://user-images.githubusercontent.com/82807965/193403775-968a04a5-118a-48dc-9848-5fec242ff3b1.jpg)
 
 
@@ -49,7 +49,7 @@
 
 
 ### 3、編輯
-* 除了帳號以外其它皆可編輯
+* 除了帳號以外其它皆可編輯，點編輯會回顯該會員資料
 ![編輯員工](https://user-images.githubusercontent.com/82807965/193403878-2acd6f7b-f6fc-4810-a6e0-1d93bc40a85a.jpg)
 
 
@@ -58,11 +58,16 @@
 * 會判斷帳號是否重複
 * 下拉表單可選擇軍種及單位
 ![新增](https://user-images.githubusercontent.com/82807965/193403964-2fc968c5-15c0-4f25-91ed-a377dc22b65d.jpg)
+![校驗帳號](https://user-images.githubusercontent.com/82807965/193404405-8becbd2d-5dc0-4c54-9ea1-0ce200c69030.jpg)
+![校驗帳號-失敗](https://user-images.githubusercontent.com/82807965/193404407-2e4290e2-83bc-4e96-8501-6a62ebdf7bfa.jpg)
+
 
 ### 5、刪除
 * 單個刪除
 * 透過多選框進行多個刪除
-![Uploading 確定刪除嗎.jpg…]()
+![確定刪除嗎](https://user-images.githubusercontent.com/82807965/193404418-4c727fff-9ce4-4008-b2ac-18cfdbfe8ea4.jpg)
+![多個刪除](https://user-images.githubusercontent.com/82807965/193404420-c4b4e1c6-9ae7-482f-9ea4-d3188b1b9e85.jpg)
+
 
 
 
