@@ -30,7 +30,7 @@
 # 功能介紹
 
 ### 1、登入畫面
-* 執行後輸入http://localhost:8080/進入到登入頁面
+* 執行後輸入 'http://localhost:8080/' 進入到登入頁面
 * 登入時先判斷帳號是否存在
 * 若帳號存在再對密碼進行驗證
 ![登入畫面](https://user-images.githubusercontent.com/82807965/193403731-363cddd9-037a-4a41-956e-b3c8fc7c2105.jpg)
