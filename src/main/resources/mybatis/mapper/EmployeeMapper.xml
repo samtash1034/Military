@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--去官網複製-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--記得修改namespace-->
+<mapper namespace="com.sam.mapper.EmployeeMapper">
+
+    <resultMap id="queryEmpAndEmployer" type="Employee">
+        <id property="id" column="id"></id>
+        <result property="employer.id" column="id"/>
+        <result property="employer.employerName" column="employer_name"/>
+        <result property="army.id" column="id"/>
+        <result property="army.armyName" column="army_name"/>
+    </resultMap>
+
+
+    <insert id="addEmployee" parameterType="Employee">
+        insert into employee(username,password,name,position,phone,email,ip,army_id,employer_id)
+        values(#{username},#{password},#{name},#{position},#{phone},#{email},#{ip},#{armyId},#{employerId})
+    </insert>
+
+    <select id="queryEmployeeAndArmyAndEmployerById" resultMap="queryEmpAndEmployer" parameterType="int">
+        select e.*,a.*,e2.* from (employee e left join army a on e.army_id=a.id) left join employer e2 on e.employer_id = e2.id where e.id = #{id};
+    </select>
+
+    <update id="updateEmployee" parameterType="Employee">
+        update employee set password=#{password},name=#{name},position=#{position},army_id=#{armyId},employer_id=#{employerId},
+        email=#{email},phone=#{phone},ip=#{ip} where id=#{id}
+    </update>
+
+    <delete id="deleteEmployeeById" parameterType="int">
+        delete from employee where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+
+
+    <select id="queryEmployeeByNameOrEmployer" resultMap="queryEmpAndEmployer">
+        select e.id,e.username,e.name,e.position,e.phone,e.email,e.employer_id,a.id,a.employer_name
+        from employee e
+        left join employer a on e.employer_id = a.id
+        <where>
+            <choose>
+                <when test="name != null and name != ''">
+                    e.name like CONCAT('%',#{name},'%')
+                </when>
+            </choose>
+            <choose>
+                <when test="employerName != null and employerName != ''">
+                    AND a.employer_name like CONCAT('%',#{employerName},'%')
+                </when>
+            </choose>
+        </where>
+        order by e.id
+    </select>
+
+
+    <select id="employeeLogin" resultType="Employee">
+        select * from employee where username = #{username} and password =#{password}
+    </select>
+
+    <select id="checkUsername" resultType="int">
+        select count(username) from employee where username = #{username};
+    </select>
+    
+</mapper>

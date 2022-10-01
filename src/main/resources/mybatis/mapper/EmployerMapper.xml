@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--去官網複製-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--記得修改namespace-->
+<mapper namespace="com.sam.mapper.EmployerMapper">
+
+    <select id="queryAllEmployer" resultType="Employer">
+        select * from employer
+    </select>
+
+</mapper>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <link th:href="@{/bootstrap-3.4.1-dist/css/bootstrap.min.css}" rel="stylesheet">
+    <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+</head>
+<body class="text-center">
+
+
+    <h1 class="h3 mb-3 font-weight-normal" >部隊文書管理系統</h1>
+
+
+    <input type="text" name="username" class="form-control" th:placeholder="請登入帳號" id="input_username">
+    <input type="password" name="password" class="form-control" th:placeholder="請登入密碼" id="input_password">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">登入</button>
+
+    <script type="text/javascript">
+
+        function login(){
+            var username = $("#input_username").val();
+            var password = $("#input_password").val();
+            var params = {
+              username: username,
+              password: password
+            };
+            console.log("帳號" +　username);
+            console.log("密碼" +　password);
+            console.log("參數" + JSON.stringify(params));
+
+            $.ajax({
+                url:"/checkUsername",
+                type:"POST",
+                contentType:"application/json; charset=utf-8",
+                data:JSON.stringify({
+                    username:username
+                }),
+                success:function (data) {
+                    if(data  == true){
+                        $.ajax({
+                            url:"/employee/login",
+                            type:"POST",
+                            contentType:"application/json; charset=utf-8",
+                            data:JSON.stringify({
+                                username:username,
+                                password:password
+                            }),
+                            success:function (data) {
+                                if(data){
+                                    console.log("1" +　data)
+                                    window.location.href ="/list.html"
+                                }else {
+                                    console.log("2" +　data)
+                                    $("#input_password").val("");
+                                    alert("密碼錯誤！！");
+
+                                }
+                            }
+                        });
+                    }else{
+                        $("#input_username").val("");
+                        $("#input_password").val("");
+                        alert("帳號不存在，請重新輸入！");
+                    }
+                }
+            });
+
+
+        }
+
+    </script>
+</body>
+</html>
