@@ -1,5 +1,5 @@
 # 簡介
-使用springboot+thymeleaf+postgresql實現部隊文書管理系統
+使用springboot+thymeleaf+PostgreSQL實現部隊文書管理系統
 
 # 使用技術
 
