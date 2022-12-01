@@ -24,8 +24,8 @@ class MilitaryApplicationTests {
 
     @Test
     void contextLoads() throws SQLException {
-        // System.out.println(dataSource.getConnection());
-        // System.out.println(dataSource.getClass());
+         System.out.println(dataSource.getConnection());
+         System.out.println(dataSource.getClass());
         //
         // List<Army> armies = armyService.queryAllArmy();
         // for (Army army : armies) {
@@ -40,7 +40,9 @@ class MilitaryApplicationTests {
         //
         // System.out.println(employeeService.queryEmployeeAndArmyAndEmployerById(1));
 
-        System.out.println(employeeService.updateEmployee(new Employee(12, "andy123", "123", "andy", "中士", "0985", "andy@gmail.com", "168.5.2.3", 2, 2)));
+//        System.out.println(employeeService.updateEmployee(new Employee(12, "andy123", "123", "andy", "中士", "0985", "andy@gmail.com", "168.5.2.3", 2, 2)));
+
+
 
     }
 
