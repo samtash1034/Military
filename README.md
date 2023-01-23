@@ -1,3 +1,8 @@
+# 網站連結
+http://sam19981026.com:8080/
+帳號：sam123
+密碼：123
+
 # 簡介
 使用springboot+thymeleaf+PostgreSQL實現部隊文書管理系統
 
